@@ -4,6 +4,7 @@ app.controller('CallController', function($scope, $http) {
   $scope.getGif = function(tag) {
     $http.get(buildApiHtml(tag)).then(function(response) {
       $scope.gif = response.data.data.image_url;
+      $scope.tag = "";
     })
   };
 });
