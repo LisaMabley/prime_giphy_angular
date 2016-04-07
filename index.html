@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="gifGenerator">
   <head>
     <meta charset="utf-8">
-    <title>Gif Generator</title>
-    <script src = "jquery-2.2.2.min.js"></script>
+    <title>Gif Generator II</title>
+    <script src="angular.min.js"></script>
     <script src = "app.js"></script>
     <link rel="stylesheet" href="style.css"></link>
   </head>
-  <body>
+
+  <body ng-controller="CallController">
     <h1>The Fountain of Gifs</h1>
+
     <div class="inputs">
-      <button>Get Another Gif!</button>
-      <input type="text" placeholder="Optional: Enter Tag" id="tagInput"/>
+      <button ng-click="getGif(tag)">Get Another Gif!</button>
+      <input ng-model="tag" type="text" placeholder="Optional: Enter Tag"/>
     </div>
-    <div class = "results">
+
+    <div class="results">
+      <img ng-src="{{gif}}" />
     </div>
+
   </body>
 </html>
